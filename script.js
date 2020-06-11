@@ -2,6 +2,9 @@ const main = document.querySelector("main");
 const voicesSelect = document.getElementById("voices");
 const textArea = document.getElementById("text");
 const ReadButton = document.getElementById("read");
+const PauseButton = document.getElementById("pause");
+const CancelButton = document.getElementById("cancel");
+const ResumeButton = document.getElementById("resume");
 const ToggleButton = document.getElementById("toogle");
 const closeButton = document.getElementById("close");
 const textBox = document.getElementById("text-box");
@@ -118,6 +121,18 @@ function speak() {
   speechSynthesis.speak(message);
 }
 
+function pause() {
+  speechSynthesis.pause(message);
+}
+
+function resume() {
+  speechSynthesis.resume(message);
+}
+
+function cancel() {
+  speechSynthesis.cancel(message);
+}
+
 //set voice
 function setVoice(e) {
   message.voice = voices.find((voice) => voice.name === e.target.value);
@@ -142,6 +157,21 @@ voicesSelect.addEventListener("change", setVoice);
 ReadButton.addEventListener("click", () => {
   setTextMessage(textArea.value);
   speak(text);
+});
+
+PauseButton.addEventListener("click", () => {
+  setTextMessage(textArea.value);
+  pause(text);
+});
+
+ResumeButton.addEventListener("click", () => {
+  setTextMessage(textArea.value);
+  resume(text);
+});
+
+CancelButton.addEventListener("click", () => {
+  setTextMessage(textArea.value);
+  cancel(text);
 });
 
 getVoices();
