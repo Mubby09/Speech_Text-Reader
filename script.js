@@ -172,6 +172,7 @@ ResumeButton.addEventListener("click", () => {
 CancelButton.addEventListener("click", () => {
   setTextMessage(textArea.value);
   cancel(text);
+  textArea.value = "";
 });
 
 getVoices();
