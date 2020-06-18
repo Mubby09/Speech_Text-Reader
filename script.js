@@ -156,22 +156,22 @@ voicesSelect.addEventListener("change", setVoice);
 //Read text button
 ReadButton.addEventListener("click", () => {
   setTextMessage(textArea.value);
-  speak(text);
+  speak();
 });
 
 PauseButton.addEventListener("click", () => {
   setTextMessage(textArea.value);
-  pause(text);
+  pause();
 });
 
 ResumeButton.addEventListener("click", () => {
   setTextMessage(textArea.value);
-  resume(text);
+  resume();
 });
 
 CancelButton.addEventListener("click", () => {
   setTextMessage(textArea.value);
-  cancel(text);
+  cancel();
   textArea.value = "";
 });
 
